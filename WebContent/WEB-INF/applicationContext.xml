@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- sqlserver 2005 -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> 
+		<property name="driverClassName" value="com.microsoft.jdbc.sqlserver.SQLServerDriver"> 
+		</property> <property name="url" value="jdbc:microsoft:sqlserver://localhost:1433;databaseName=db_shopgouwu"> 
+		</property> <property name="username" value="sa"></property> <property name="password" 
+		value="123456"></property> </bean> -->
+
+	<!-- mysql -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/daxiongfeicui">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="111"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/model/TAdmin.hbm.xml</value>
+				<value>com/model/TContact.hbm.xml</value>
+				<value>com/model/TWenan.hbm.xml</value>
+				<!-- <value>com/model/TGonggao.hbm.xml</value> -->
+				<!-- <value>com/model/TUser.hbm.xml</value> -->
+				<!-- <value>com/model/TCatelog.hbm.xml</value> -->
+				<!-- <value>com/model/TGoods.hbm.xml</value> -->
+				<!-- <value>com/model/TOrderItem.hbm.xml</value> -->
+				<!-- <value>com/model/TOrder.hbm.xml</value> -->
+				<!-- <value>com/model/TServer.hbm.xml</value> -->
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- <bean id="indexAction" class="com.action.indexAction" scope="prototype"> -->
+	<!-- <property name="goodsDAO"> -->
+	<!-- <ref bean="TGoodsDAO" /> -->
+	<!-- </property> -->
+	<!-- <property name="orderItemDAO"> -->
+	<!-- <ref bean="TOrderItemDAO" /> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+	<!-- <bean id="TUserDAO" class="com.dao.TUserDAO"> -->
+	<!-- <property name="sessionFactory"> -->
+	<!-- <ref bean="sessionFactory"></ref> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+	<!-- <bean id="userAction" class="com.action.UserAction" scope="prototype"> -->
+	<!-- <property name="userDAO"> -->
+	<!-- <ref bean="TUserDAO" /> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+
+	<!-- 后台的登录 -->
+	<bean id="loginService" class="com.service.loginService">
+		<property name="adminDAO">
+			<ref bean="TAdminDAO" />
+		</property>
+	</bean>
+
+	<!-- <bean id="cartService" class="com.service.cartService"> -->
+	<!-- <property name="goodsDAO"> -->
+	<!-- <ref bean="TGoodsDAO" /> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+
+
+
+	<bean id="TAdminDAO" class="com.dao.TAdminDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="adminAction" class="com.action.adminAction" scope="prototype">
+		<property name="adminDAO">
+			<ref bean="TAdminDAO" />
+		</property>
+	</bean>
+
+	<bean id="TContactDAO" class="com.dao.TContactDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="contactAction" class="com.action.ContactAction" scope="prototype">
+		<property name="contactDAO">
+			<ref bean="TContactDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TWenanDAO" class="com.dao.TWenanDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="wenanAction" class="com.action.WenanAction" scope="prototype">
+		<property name="wenanDAO">
+			<ref bean="TWenanDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ldyAction" class="com.action.LdyAction" scope="prototype">
+		<property name="contactDAO">
+			<ref bean="TContactDAO" />
+		</property>
+		<property name="wenanDAO">
+			<ref bean="TWenanDAO" />
+		</property>
+	</bean>
+</beans>

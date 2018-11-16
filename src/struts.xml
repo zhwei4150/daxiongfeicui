@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+     
+     
+<struts>
+    <package name="daxiong" extends="struts-default">
+<!--         <global-results> -->
+<!--             <result name="succeed">/common/succeed.jsp</result> -->
+<!--             <result name="successAdd">/common/add_success.jsp</result> -->
+<!--             <result name="successDel">/common/del_success.jsp</result> -->
+<!--             <result name="successUpdate">/common/update_success.jsp</result> -->
+<!--         </global-results> -->
+        
+        <action name="upload" class="com.util.upload" method="upload">
+             <result name="success">/admin/upload_re.jsp</result>
+        </action>
+        
+        <!-- 跳转到前台ACTION -->
+<!--         <action name="index" class="indexAction" method="index"> -->
+<!--             <result name="success">/qiantai/index.jsp</result> -->
+<!--         </action> -->
+         
+        <action name="adminAdd" class="adminAction" method="adminAdd">
+        	<result name="success" type="redirect">/adminManage.action</result>
+        </action>
+        <action name="adminDel" class="adminAction" method="adminDel">
+        	<result name="success" type="redirect">/adminManage.action</result>
+        </action>
+        <action name="adminManage" class="adminAction" method="adminManage">
+            <result name="success">/admin/index/adminManage.jsp</result>
+        </action>
+<!--         <action name="adminManageFenye" class="adminAction" method="adminManageFenye"> -->
+<!--             <result name="success">/admin/index/adminManageFenye.jsp</result> -->
+<!--         </action> -->
+        
+        <action name="contactAdd" class="contactAction" method="contactAdd">
+        	<result name="success" type="redirect">/contactMana.action</result>
+        </action>
+        <action name="contactDel" class="contactAction" method="contactDel">
+        	<result name="success" type="redirect">/contactMana.action</result>
+        </action>
+        <action name="contactActive" class="contactAction" method="contactActive">
+        	<result name="success" type="redirect">/contactMana.action</result>
+        </action>
+        <action name="contactMana" class="contactAction" method="contactMana">
+            <result name="success">/admin/index/contactManage.jsp</result>
+        </action>
+       
+       
+        <action name="wenanAdd" class="wenanAction" method="wenanAdd">
+          	<result name="input">/admin/index/wenanManage.jsp?wenanType=1</result>
+        	<result name="success" type="redirect">/wenanManage.action?wenanType=${wenanType}</result>
+        </action>
+        <action name="wenanDel" class="wenanAction" method="wenanDel">
+        	<result name="success" type="redirect">/wenanManage.action?wenanType=${wenanType}</result>
+        	<result name="input">/admin/index/wenanManage.jsp?wenanType=1</result>
+        </action>
+        <action name="wenanDetail" class="wenanAction" method="wenanDetail">
+        	<result name="success">/admin/index/wenanDetail.jsp?wenanType=${wenanType}</result>
+        	<result name="input">/admin/index/wenanManage.jsp?wenanType=1</result>
+        </action>
+        <action name="wenanManage" class="wenanAction" method="wenanManage">
+            <result name="success">/admin/index/wenanManage.jsp</result>
+        </action>  
+        
+        <action name="showLdy" class="ldyAction" method="showLdy">
+            <result name="success">/luodiye.jsp</result>
+        </action>
+    </package>
+</struts>

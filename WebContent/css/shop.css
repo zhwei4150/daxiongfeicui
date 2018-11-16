@@ -1,0 +1,358 @@
+@charset "utf-8";
+
+
+
+
+/* ---------- Index ---------- 
+
+.wbox .body {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.wbox .bodyLeft {
+	width: 210px;
+	float: left;
+}
+
+.wbox .bodyRight {
+	width: 780px;
+	float: right;
+}
+*/
+.wbox .slider {
+	width: 710px;
+	height: 210px;
+	margin-left:220px;
+	clear: both;
+	overflow: hidden;
+	border: 1px solid #dddddd;
+}
+
+.wbox .slider .scrollable {
+	width: 710px;
+	height: 210px;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+
+.wbox .slider .items {
+	width: 20000em;
+	position: absolute;
+	z-index: 1;
+	clear: both;
+}
+
+.wbox .slider .scrollable .items div {
+	width: 710px;
+	float: left;
+}
+
+.wbox .slider .scrollable .navi {
+	height: 10px;
+	margin: 0px 10px;
+	position: absolute;
+	z-index: 2;
+	right: 50px;
+	bottom: 12px;
+}
+
+.wbox .slider .scrollable .navi a {
+	width: 10px;
+	height: 10px;
+	float: left;
+	margin-left: 5px;
+	display: block;
+	outline: none;
+	overflow: hidden;
+	background: url(../images/index_slider_navi_bg.gif) -1px -40px no-repeat;
+}
+
+.wbox .slider .scrollable .navi a:hover {
+	background-position: -1px -60px;
+}
+
+.wbox .slider .scrollable .navi a.active {
+	background-position: -1px -60px;
+}
+
+.wbox .slider .scrollable .prevNext {
+	height: 15px;
+	width: 40px;
+	position: absolute;
+	z-index: 2;
+	right: 10px;
+	bottom: 10px;
+	display: block;
+	float: left;
+}
+
+.wbox .slider .scrollable a.browse {
+	height: 15px;
+	width: 20px;
+	display: block;
+	float: left;
+	cursor: pointer;
+	overflow: hidden;
+	background: url(../images/index_slider_navi_bg.gif) no-repeat;
+}
+
+.wbox .slider .scrollable a.right {
+	background-position: -21px 0px;
+}
+
+.wbox .slider .scrollable .right:hover {
+	background-position: -21px -19px;
+}
+
+.wbox .slider .scrollable .left:hover {
+	background-position: 0px -19px;
+}
+
+.wbox .slider .scrollable a.disabled {
+	visibility: hidden !important;
+}
+
+.wbox .hotGoodsSlider {
+	width: 778px;
+	height: 196px;
+	clear: both;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #dddddd;
+}
+
+.wbox .hotGoodsSlider .title {
+	width: 770px;
+	height: 25px;
+	line-height: 25px;
+	clear: both;
+	padding-left: 8px;
+	text-align: left;
+	color: #b983e2;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.wbox .hotGoodsSlider .title strong {
+	margin-right: 5px;
+	color: #333333;
+}
+
+.wbox .hotGoodsSlider .scrollable {
+	width: 700px;
+	height: 196px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+.wbox .hotGoodsSlider a.prev {
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+	margin-top: 60px;
+	margin-right: 9px;
+	cursor: pointer;
+	background: url(../images/index_bg.gif) 0px 0px no-repeat;
+}
+
+.wbox .hotGoodsSlider a.prev:hover {
+	background: url(../images/index_bg.gif) -30px 0px no-repeat;
+}
+
+.wbox .hotGoodsSlider a.next {
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: right;
+	margin-top: 60px;
+	margin-left: 9px;
+	cursor: pointer;
+	background: url(../images/index_bg.gif) -60px 0px no-repeat;
+}
+
+.wbox .hotGoodsSlider a.next:hover {
+	background: url(../images/index_bg.gif) -90px 0px no-repeat;
+}
+
+.wbox .hotGoodsSlider .items {
+	width: 20000em;
+	position: absolute;
+	clear: both;
+}
+
+.wbox .hotGoodsSlider .scrollable .items div {
+	width: 700px;
+	float: left;
+}
+
+.wbox .hotGoodsSlider .scrollable .items li {
+	width: 162px;
+	height: 150px;
+	_display: inline;
+	float: left;
+	margin: 0px 6px;
+	text-align: center;
+	position: relative;
+}
+
+.wbox .hotGoodsSlider .scrollable .items li img {
+	width: 140px;
+	height: 140px;
+	clear: both;
+	padding: 10px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	border: 1px solid #e2e2e2;
+}
+
+.wbox .hotGoodsSlider .scrollable .items li p {
+	width: 140px;
+	line-height: 25px;
+	margin-left: 11px;
+	clear: both;
+	color: #ffffff;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 10;
+	background-color: #000000;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+}
+
+.wbox .newGoods {
+	width: 998px;
+	height: 208px;
+	clear: both;
+	overflow: hidden;
+	border: 1px solid #dddddd;
+}
+
+.wbox .newGoods .left {
+	width: 217px;
+	height: 158px;
+	float: left;
+	padding-top: 50px;
+	text-align: center;
+	background: url(../images/index_bg.gif) 0px -30px no-repeat;
+}
+
+.wbox .newGoods .left li {
+	line-height: 29px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #666666;
+	cursor: pointer;
+}
+
+.wbox .newGoods .left li:hover {
+	background: url(../images/index_bg.gif) 0px -240px no-repeat;
+}
+
+.wbox .newGoods .left li.current {
+	background: url(.../images/index_bg.gif) 0px -240px no-repeat;
+}
+
+.wbox .newGoods .right {
+	width: 781px;
+	float: right;
+	position: relative;
+}
+
+.wbox .newGoods .right ul {
+	position: absolute;
+	top: 10px;
+	left: 0px;
+}
+
+.wbox .newGoods .right li {
+	width: 140px;
+	height: 166px;
+	_display: inline;
+	float: left;
+	padding: 10px;
+	margin: 0px 15px;
+	text-align: center;
+	border: 1px solid #ededed;
+}
+
+.wbox .newGoods .right li p {
+	line-height: 25px;
+	clear: both;
+}
+
+.wbox .newGoods .right li img {
+	width: 140px;
+	height: 140px;
+}
+
+.wbox .bestGoods {
+	width: 780px;
+	clear: both;
+}
+
+.wbox .bestGoods .top {
+	width: 770px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	clear: both;
+	font-size: 14px;
+	font-weight: bold;
+	color: #b983e2;
+	background: url(../images/index_bg.gif) 0px -300px no-repeat;
+}
+
+.wbox .bestGoods .top strong {
+	margin-right: 5px;
+	color: #333333;
+}
+
+.wbox .bestGoods .middle {
+	width: 778px;
+	clear: both;
+	overflow: hidden;
+	padding: 5px 0px 19px 0px;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+}
+
+.wbox .bestGoods li {
+	width: 140px;
+	height: 176px;
+	_display: inline;
+	float: left;
+	padding: 10px;
+	margin: 0px 15px 25px 15px;
+	text-align: center;
+	border: 1px solid #ededed;
+}
+
+.wbox .bestGoods li img {
+	width: 140px;
+	height: 140px;
+}
+
+.wbox .bestGoods li p {
+	line-height: 20px;
+	clear: both;
+}
+
+.wbox .bestGoods .bottom {
+	width: 780px;
+	height: 7px;
+	clear: both;
+	overflow: hidden;
+	background: url(../images/index_bg.gif) 0px -360px no-repeat;
+}
+
+
+
+
